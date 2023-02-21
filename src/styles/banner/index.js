@@ -15,9 +15,9 @@ export const BannerContainer = styled(Box)(({ matches, theme }) => ({
     },
     //BACKGROUND IMAGE FOR BANNER
 
-    // backgroundImage: `url(/images/banner/ave-bench.webp)`,
-    // backgroundRepeat: "no-repeat",
-    // backgroundPosition: "center",
+    backgroundImage: `url(/images/banner/actionshot.png)`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
 
   }));
 
@@ -26,14 +26,14 @@ export const BannerContainer = styled(Box)(({ matches, theme }) => ({
     flexDirection: "column",
     justifyContent: "center",
     maxWidth: 420,
-    padding: "30px",
+    padding: "100px",
   }));
 
   export const BannerImage = styled("img")(({ src, theme }) => ({
     src: `url(${src})`,
-    // backgroundImage: `url(${src})`,
-    // backgroundRepeat: "no-repeat",
-    // backgroundPosition: "center",
+    backgroundImage: `url(${src})`,
+    backgroundRepeat: "no-repeat",
+    backgroundPosition: "center",
     width: "500px",
     [theme.breakpoints.down("md")]: {
       width: "350px",

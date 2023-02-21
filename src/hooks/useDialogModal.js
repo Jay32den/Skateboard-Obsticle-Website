@@ -13,7 +13,7 @@ export default function useDialogModal(Component) {
 
       if (Component) {
         return (
-          <Component open={open} onClose={() => setOpen(false)} {...props} />
+          <Component open={open} onClose={() => setOpen(null)} {...props} />
         );
       }
     },

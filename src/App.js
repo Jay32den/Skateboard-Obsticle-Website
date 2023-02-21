@@ -1,4 +1,4 @@
-
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Container, Typography, Box, Stack, Grid, Button } from "@mui/material";
 import Appbar from "./components/appbar";
@@ -11,12 +11,14 @@ import Footer from "./components/footer";
 import AppDrawer from "./components/drawer";
 import Promotions from "./components/promotions";
 import SearchBox from "./components/search";
-import { useEffect } from "react";
+import Cart from "./components/cart";
 
 function App() {
+
   useEffect(() => {
     document.title = "React Material UI - Home";
   }, []);
+
   return (
     <ThemeProvider theme={theme}>
       <Container
@@ -38,6 +40,7 @@ function App() {
             <Products />
             <Footer />
             <AppDrawer />
+            <Cart/>
           </UIProvider>
         </Stack>
       </Container>
@@ -46,4 +49,3 @@ function App() {
 }
 
 export default App;
-// https://www.youtube.com/watch?v=MgKaxe9euI4 2:02:11

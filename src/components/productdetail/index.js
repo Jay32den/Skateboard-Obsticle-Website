@@ -19,7 +19,7 @@ import {
   import FacebookIcon from "@mui/icons-material/Facebook";
   import TwitterIcon from "@mui/icons-material/Twitter";
   import InstagramIcon from "@mui/icons-material/Instagram";
-  import FavoriteIcon from "@mui/icons-material/Favorite";
+  // import FavoriteIcon from "@mui/icons-material/Favorite";
   import { useTheme } from "@mui/material/styles";
   import { useMediaQuery } from "@mui/material";
   
@@ -59,7 +59,7 @@ import {
             alignItems="center"
             justifyContent={"space-between"}
           >
-            Product title
+            Product Detail
             <IconButton onClick={onClose}>
               <CloseIcon />
             </IconButton>
@@ -77,8 +77,7 @@ import {
               </Typography>
               <Typography variant="body">
                 {product.description}
-                {product.description}
-                {product.description}
+
               </Typography>
               <Box
                 sx={{ mt: 4 }}

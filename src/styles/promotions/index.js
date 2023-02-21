@@ -4,14 +4,14 @@ import { Colors } from "../theme";
 
 export const PromotionsContainer = styled(Box)(({ theme }) => ({
   [theme.breakpoints.up("md")]: {
-    padding: "40px 0px 40px 0px",
+    padding: "5px 0px 5px 0px",
   },
   display: "flex",
   justifyContent: "center",
   alignItems: "center",
-  padding: "20px 0px 20px 0px",
+  padding: "10px 0px 10px 0px",
   overflow: "hidden",
-  background: Colors.secondary,
+  background: Colors.black,
 }));
 
 export const MessageText = styled(Typography)(({ theme }) => ({

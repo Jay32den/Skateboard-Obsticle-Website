@@ -16,22 +16,17 @@ import FitScreenIcon from "@mui/icons-material/FitScreen";
 import useDialogModal from "../../hooks/useDialogModal";
 import ProductDetail from "../productdetail";
 import ProductMeta from "./ProductMeta";
+import useCart from "../../hooks/useCart";
 
 export default function SingleProduct({ product, matches }) {
   const [ProductDetailDialog, showProductDetailDialog, closeProductDialog] =
     useDialogModal(ProductDetail);
 
-  const [showOptions, setShowOptions] = useState(false);
+  const { addToCart, addToCartText } = useCart(product);
 
-  const handleMouseEnter = () => {
-    setShowOptions(true);
-  };
-  const handleMouseLeave = () => {
-    setShowOptions(false);
-  };
   return (
     <>
-      <Product onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <Product>
         <ProductImage src={product.image} />
         <ProductMeta product={product} matches={matches} />
         <ProductActionsWrapper>
@@ -53,7 +48,8 @@ export default function SingleProduct({ product, matches }) {
           </Stack>
         </ProductActionsWrapper>
       </Product>
-      <ProductAddToCart variant="contained">Add to cart</ProductAddToCart>
+      <ProductAddToCart onClick={addToCart}
+      variant="contained">{addToCartText}</ProductAddToCart>
       <ProductDetailDialog product={product} />
     </>
   );

@@ -8,14 +8,14 @@ export default function Banner() {
         
     return (
             <BannerContainer>
-                <BannerImage src="/images/banner/ave-bench.webp"/>
+                {/* <BannerImage src="/images/banner/ave-bench.webp"/> */}
                 <BannerContent>
-                    <Typography variant="h6"> Check it Out </Typography>
+                    <Typography variant="h4">  </Typography>
                     <BannerTitle variant="h2">
-                        New New
+                        {/* New New */}
                     </BannerTitle>
                     <BannerDescription variant="subtitle">
-                        Whats up
+                        {/* Whats up */}
                     </BannerDescription>
                     <BannerShopButton color="secondary">Shop Now</BannerShopButton>
                 </BannerContent>
