@@ -36,9 +36,7 @@ function App() {
       >
         <Stack>
           <UIProvider>
-            <BrowserRouter>
             <Appbar />
-            </BrowserRouter>
             <Banner />
             <Promotions />
             <SearchBox />
