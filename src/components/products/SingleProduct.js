@@ -31,7 +31,7 @@ export default function SingleProduct({ product, matches }) {
         <ProductMeta product={product} matches={matches} />
         <ProductActionsWrapper>
           <Stack direction={matches ? "row" : "column"}>
-            {/* //IF SOMEONE WANTS A FAVORITE ICON
+            {/* //FAVORITE ICON
             {/* <ProductFavButton isfav={0}>
               <FavoriteIcon />
             </ProductFavButton> */} 

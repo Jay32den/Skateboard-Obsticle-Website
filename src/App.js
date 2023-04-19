@@ -12,13 +12,19 @@ import AppDrawer from "./components/drawer";
 import Promotions from "./components/promotions";
 import SearchBox from "./components/search";
 import Cart from "./components/cart";
+import { BrowserRouter } from "react-router-dom";
 
 function App() {
 
-  useEffect(() => {
-    document.title = "React Material UI - Home";
-  }, []);
-
+  let navBar
+    switch (window.location.pathname) {
+      case "/home":
+        navBar = App
+        break;
+    case "/products":
+        navBar = Products
+        break;
+    }
   return (
     <ThemeProvider theme={theme}>
       <Container
@@ -30,7 +36,9 @@ function App() {
       >
         <Stack>
           <UIProvider>
+            <BrowserRouter>
             <Appbar />
+            </BrowserRouter>
             <Banner />
             <Promotions />
             <SearchBox />

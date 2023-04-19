@@ -4,35 +4,38 @@ import { Avatar,Button, IconButton, Divider, Drawer, Paper, Typography, useMedia
 import { useUIContext } from "../../context/ui";
 import { Colors } from '../../styles/theme';
 import { Box } from "@mui/system";
+import useCart from "../../hooks/useCart";
 
 export default function Cart() {
     const { cart, setShowCart, showCart, setCart} = useUIContext();
-    const [price, setPrice] = useState(0);
     const theme = useTheme();
     const matches = useMediaQuery(theme.breakpoints.down('md'));
+    const [price, setPrice] = useState(0)
 
-    // const handleRemoveFromCart = (id) => {
-    //     const arr = cart.filter((item) => item.id !== id);
-    //     setShowCart(arr);
-    //     handlePrice();
-    //   };
-
-      const handlePrice = () => {
-        let ans = 0;
-        cart.map((item) => (ans += item.amount * item.price));
-        setPrice(ans);
+    const handleChange = (item, d) => {
+        const ind = cart.indexOf(item);
+        const arr = cart;
+        arr[ind].amount += d;
+    
+        if (arr[ind].amount === 0) arr[ind].amount = 1;
+        setCart([...arr]);
       };
 
-      const handleRemoveFromCart = (item) => {
+    const removeCartItem = (item) => {
         setCart(
           cart.filter(c => c.id !== item.id)
         );
     }
+
+    const handlePrice = () => {
+        let ans = 0;
+        cart.map((item) => (ans += item.amount * item.price));
+        setPrice(ans);
+      };
     
       useEffect(() => {
-        handlePrice(); 
+        handlePrice();
       });
-    
     
     const cartContent = cart.map (item => (
         <Box key={item.id}>
@@ -47,21 +50,23 @@ export default function Cart() {
             <Typography variant="h6">{item.name}</Typography>
             {!matches && <Typography variant="subtitle2">{item.description}</Typography>}
         </Box>
-{/* 
-        <>
-            <button onClick={() => handleChange(item, +1)}>+</button>
-            <button>{item.amount}</button>
-            <button onClick={() => handleChange(item, -1)}>-</button>
-          </> */}
-
         <Typography variant="body1" justifyContent={"end"}>
             ${item.price}
-            <Button fontSize="small" name="removeCartItem" onClick={() => {handleRemoveFromCart(item.id)}}>Remove</Button>
         </Typography>
+
+
             </Box>
             {matches && <Typography variant="subtitle2">{item.description}</Typography>}
             <Divider variant="inset" />
+            <button onClick={() => removeCartItem(item)}>Remove</button>
+            <div>
+            <button onClick={() => handleChange(item, -1)}>-</button>
+            <button>{item.amount}</button>
+            <button onClick={() => handleChange(item, 1)}>+</button>
+          </div>
+          
         </Box>
+        
         
         
     ));
@@ -94,17 +99,7 @@ export default function Cart() {
                     {" "}
                     Text in the Cart
                 </Typography>
-                {/* <div>
-            <button onClick={() => handleChange(item, 1)}>+</button>
-            <button>{item.amount}</button>
-            <button onClick={() => handleChange(item, -1)}>-</button>
-          </div>
-          <div>
-            <span>{item.price}</span>
-            <button onClick={() => handleRemove(item.id)}>Remove</button>
-          </div>
-        </div>
-      ))} */}
+
                 <Paper
                 elevation={0}
                 sx={{mt: 2,
@@ -113,7 +108,9 @@ export default function Cart() {
                 }}
                 >
             {cartContent}
+
             </Paper>
+            <div id="total">Total: {handlePrice}</div>
             <Button sx={{mt:4}} variant="contained">
                 Proceed to Payment
             </Button>

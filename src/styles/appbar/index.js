@@ -27,9 +27,10 @@ export const AppbarHeader = styled(Typography)(() => ({
   // headerAppBar
   export const MyList = styled(List)(({ type }) => ({
     display: type === "row" ? "flex" : "block",
-    flexGrow: 3,
+    flexGrow: 20,
   justifyContent: "center",
   alignItems: "center",
+  gap: "5rem"
 }));
 
 export const ActionIconsContainerMobile = styled(Box)(() => ({
@@ -54,3 +55,5 @@ export const DrawerCloseButton = styled(IconButton)(() => ({
   left: DrawerWidth,
   zIndex: 1999,      
 }));
+
+export const Link = styled
