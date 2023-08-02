@@ -97,7 +97,7 @@ export default function Cart() {
                 </Typography>
                 <Typography variant="body1" color={Colors.muted}>
                     {" "}
-                    Text in the Cart
+                    Thank you for shopping
                 </Typography>
 
                 <Paper
@@ -110,7 +110,7 @@ export default function Cart() {
             {cartContent}
 
             </Paper>
-            <div id="total">Total: {handlePrice}</div>
+            
             <Button sx={{mt:4}} variant="contained">
                 Proceed to Payment
             </Button>

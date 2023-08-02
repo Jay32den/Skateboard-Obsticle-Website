@@ -18,15 +18,15 @@ export const products = [
     {
         id: 3,
         name: "Bench",
-        price: 999,
+        price: 70.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
         image: "/images/products/green-bench-insta.png",
         amount: 1
     },
     {
         id: 4,
-        name: "?",
-        price: 999,
+        name: "Picnic Table",
+        price: 40.99,
         description: "Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore et dolore magna",
         image: "/images/products/picnic-bench-insta.png",
         amount: 1

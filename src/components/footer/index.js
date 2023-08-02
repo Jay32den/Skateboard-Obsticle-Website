@@ -76,9 +76,9 @@ export default function Footer() {
           <FooterTitle variant="body1">my account</FooterTitle>
           <List>
             <ListItemText>
-              {/* <Typography lineHeight={2} variant="caption2">
+              <Typography lineHeight={2} variant="caption2">
                 Login
-              </Typography> */}
+              </Typography>
             </ListItemText>
             <ListItemText>
               <Typography lineHeight={2} variant="caption2">
@@ -86,14 +86,14 @@ export default function Footer() {
               </Typography>
             </ListItemText>
             <ListItemText>
-              {/* <Typography lineHeight={2} variant="caption2">
+              <Typography lineHeight={2} variant="caption2">
                 My Account
-              </Typography> */}
+              </Typography>
             </ListItemText>
             <ListItemText>
-              {/* <Typography lineHeight={2} variant="caption2">
+              <Typography lineHeight={2} variant="caption2">
                 Wishlist
-              </Typography> */}
+              </Typography>
             </ListItemText>
           </List>
         </Grid>

@@ -18,7 +18,7 @@ export default function Actions({matches}) {
     return(
         <Component>
         <MyList type="row">
-            <ListItemButton
+            {/* <ListItemButton
                 sx={{
                     justifyContent: "center",
                 }}
@@ -32,8 +32,8 @@ export default function Actions({matches}) {
             >
 
                 </ListItemIcon>
-            </ListItemButton> 
-            <Divider orientation="vertical" flexItem />
+            </ListItemButton>  */}
+            {/* <Divider orientation="vertical" flexItem /> */}
             <ListItemButton
                 sx={{
                     justifyContent: "center",
@@ -49,8 +49,8 @@ export default function Actions({matches}) {
                     <Badge badgeContent={cart && cart.length} color="secondary">
                     <ShoppingCartIcon onClick={() => setShowCart(true)} />
                     </Badge>
+
                     
-                    {/* <FavoriteIcon /> */}
                 </ListItemIcon>
             </ListItemButton> 
             <Divider orientation="vertical" flexItem />
@@ -66,10 +66,25 @@ export default function Actions({matches}) {
                         color: matches && Colors.secondary
                      }}
                 >
-                    {/* <PersonIcon /> */}
+                    <FavoriteIcon />
                 </ListItemIcon>
             </ListItemButton> 
-            {/* <Divider orientation="vertical" flexItem /> */}
+            <Divider orientation="vertical" flexItem />
+        <ListItemButton
+          sx={{
+            justifyContent: "center",
+          }}
+        >
+          <ListItemIcon
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              color: matches && Colors.secondary,
+            }}
+          >
+            <PersonIcon />
+          </ListItemIcon>
+        </ListItemButton>
         </MyList>
         </Component>
     )
